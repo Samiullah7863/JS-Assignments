@@ -5,7 +5,14 @@
 // that function would return the data of the employee which name matches the name from the argument.
 
 
-function myFunc(employeesData, employeeName) {
+interface IEmployeeData {
+  name: string;
+  gender: string;
+  age: number;
+  designation: string;
+}
+
+function myFunc(employeesData: IEmployeeData[], employeeName: string): IEmployeeData | string {
   for (let employeeData of employeesData) {
     if (employeeData.name === employeeName) {
       return employeeData;
@@ -15,7 +22,7 @@ function myFunc(employeesData, employeeName) {
   return "No user found with name: " + employeeName;
 }
 
-let dataArr = [
+let dataArr: IEmployeeData[] = [
   {
     name: "Samiullah",
     gender: "Male",

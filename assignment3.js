@@ -14,9 +14,9 @@
 
 
 
-function func(startPoint, endPoint) {
+function myFunc(startPoint: number, endPoint: number): Array<string | number> {
 
-    let arr = [];
+    let arr: Array<string | number> = [];
 
     for (let i = startPoint; i <= endPoint; i++) {
         
@@ -35,7 +35,7 @@ function func(startPoint, endPoint) {
     return arr;
 }
 
-let arr = func(5, 15);
+let arr = myFunc(5, 15);
 arr.forEach(item => {
     console.log(item);
 })
