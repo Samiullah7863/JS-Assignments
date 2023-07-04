@@ -5,17 +5,17 @@
 // If array has any value other than number then it ignores that value.
 
 
-function sum(arr){
-  let totalSum = 0;
+function sum(arr: Array<number | string>): number {
+  let totalSum: number = 0;
 
   arr.forEach(num => {
-    if(Number.isInteger(num)) {
-        totalSum += num;
+    if (typeof num === "number") {
+      totalSum += num;
     }
-  })
-  
+  });
+
   return totalSum;
 }
 
-let arr = [1, 2, 3, 4, 5, "Ali", 15];
+let arr: Array<number | string> = [1, 2, 3, 4, 5, "Ali", 15];
 console.log("Total = " + sum(arr));

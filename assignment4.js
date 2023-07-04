@@ -1,6 +1,8 @@
 
 
 
+
+
 // Create a function watcher, which accepts 1 argument named seconds. 
 // when I trigger the function it would print `Start Timer` and then start the timer and after each second it would print the current time 
 // and when the timer reached to its required seconds then the timer would stop and print `Your timer has been stopped.`
@@ -14,12 +16,11 @@
 // Your timer has been stopped.
 
 
+let sec: number = 0;
+let min: number = 0;
+let isStart: boolean = true;
 
-let sec = 0;
-let min = 0;
-let isStart = true;
-
-function watcher(seconds) {
+function watcher(seconds: number): void {
     if (isStart) {
       console.log("Start Timer");
     }
@@ -40,12 +41,12 @@ function watcher(seconds) {
         console.log(min + ":" + sec);    
     }
     
-    let totalTime = sec + min * 60;
+    let totalTime: number = sec + min * 60;
     if (seconds == totalTime) {
       clearInterval(interval);
       console.log("Your Timer has stopped.");
     }
 }
 
-let stopSec = 5;
-var interval = setInterval(watcher, 1000, stopSec);
+const stopSec: number = 5;
+const interval = setInterval(watcher, 1000, stopSec);
